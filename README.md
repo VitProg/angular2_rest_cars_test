@@ -12,7 +12,14 @@ npm install
 ## Configuration
 Edit `environments/environment.prod.ts` and `environments/environment.ts`, change `restApi` to real url to cars rest api 
 
-## Development server``
+### Nginx
+Build project `ng build`. In nginx config set `root` to `project/dist` directory
+
+
+#
+
+
+## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

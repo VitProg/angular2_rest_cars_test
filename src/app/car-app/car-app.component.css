@@ -1,0 +1,10 @@
+.carapp {}
+.carapp .header {}
+.carapp .filter {
+    margin-bottom: 1em;
+}
+.carapp .carsTable {}
+
+.trans-opacity {
+    -webkit-transition: opacity 0.15s; -moz-transition: opacity 0.15s; -ms-transition: opacity 0.15s; -o-transition: opacity 0.15s; transition: opacity 0.15s;
+}

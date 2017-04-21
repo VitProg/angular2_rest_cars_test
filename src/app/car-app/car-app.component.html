@@ -1,0 +1,48 @@
+<section class="carapp">
+    <header class="header">
+        <h1>{{title}}</h1>
+    </header>
+
+    <section class="filter form-inline text-right">
+        <div class="form-group">
+            <label for="filterYear">Год выпуска:</label>
+            <select id="filterYear" class="year form-control input-xs" (change)="onFilterYearChange($event.currentTarget.value)">
+                <option>[все]</option>
+                <option *ngFor="let year of years" value="{{year}}" [selected]="filterYear === year">{{year}}</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="carsTable">
+        <div>
+            <em *ngIf="pager.pageCount > 1">Показанно {{cars.length}} из {{pager.totalCount}}</em>
+        </div>
+        <app-pagination  *ngIf="pager.pageCount > 1" [offset]="pager.offset" [size]="pager.totalCount" [limit]="pager.perPage" [range]="4" (pageChange)="onPageChange($event)"></app-pagination>
+        <table class="table table-striped table-bordered table-hover table-condensed trans-opacity" [style.opacity]="opacity">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Марка</th>
+                    <th>Модель</th>
+                    <th>Год</th>
+                    <th>Цвет</th>
+                    <th>Пробег (км)</th>
+                    <th>Цена (руб)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let car of cars">
+                    <td>{{car.id}}</td>
+                    <td>{{car.brand}}</td>
+                    <td>{{car.model}}</td>
+                    <td>{{car.year}}</td>
+                    <td>{{car.color}}</td>
+                    <td>{{car.mileage | number }}</td>
+                    <td>{{car.cost | number }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <app-pagination *ngIf="pager.pageCount > 1" [offset]="pager.offset" [size]="pager.totalCount" [limit]="pager.perPage" [range]="4" (pageChange)="onPageChange($event)"></app-pagination>
+    </section>
+
+</section>

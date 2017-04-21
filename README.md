@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
 ```
-npm install -g @angular/cli
+sudo npm install -g @angular/cli
 git clone https://github.com/VitProg/angular2_rest_cars_test
 cd angular2_rest_cars_test
 npm install
